@@ -5,9 +5,9 @@
     box-sizing: border-box;
 }
 
-/* Body Styling for Themes */
+/* Body Styling */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     transition: background-color 0.4s ease, color 0.4s ease;
 }
@@ -18,7 +18,7 @@ body.light {
 }
 
 body.dark {
-    background-color: #1a1a2e;
+    background-color: #20232a;
     color: #eaeaea;
 }
 
@@ -57,43 +57,38 @@ body.dark {
     transform: scale(1.2);
 }
 
-/* Banner */
-.banner {
-    text-align: center;
-    padding: 4rem 1rem;
-    background: linear-gradient(135deg, #0078d7, #1a73e8);
-    color: #ffffff;
-    border-bottom: 5px solid #005cbf;
-}
-
-.banner h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.banner p {
-    font-size: 1.2rem;
-}
-
-/* Section Content Styling */
-section {
+/* Contact Section */
+.contact-content {
     padding: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: 2rem auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.4s ease;
 }
 
-section h1,
-section h2 {
-    color: inherit;
-    border-bottom: 2px solid currentColor;
-    padding-bottom: 0.5rem;
+.contact-content h1 {
+    color: #0078d7;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
-/* Form Styling (Contact Page) */
+.contact-content p {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #555;
+}
+
 .contact-form {
     display: flex;
     flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
 }
 
 .contact-form input,
@@ -104,7 +99,7 @@ section h2 {
     font-size: 1rem;
     border-radius: 5px;
     border: 1px solid #ccc;
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .contact-form input:focus,
@@ -118,10 +113,12 @@ section h2 {
     color: white;
     border: none;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .contact-form button:hover {
     background-color: #005cbf;
+    box-shadow: 0 0 10px #005cbf;
 }
 
 /* Footer */
@@ -147,7 +144,12 @@ body.dark .navbar {
     background-color: #333;
 }
 
-body.dark .banner {
-    background: linear-gradient(135deg, #1a1a2e, #0f3460);
-    border-bottom-color: #0f2045;
+body.dark .contact-content {
+    background-color: #2e2e2e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.contact-form button:hover {
+    background-color: #104f76;
+    box-shadow: 0 0 10px #104f76;
 }
