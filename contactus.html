@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Max Dev Coder</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
         (function() {
-            emailjs.init("YOUR_PUBLIC_KEY");
+            emailjs.init("hd8S9bU0sbH_YUHr9");
         })();
 
         window.onload = function() {
             document.getElementById('contactForm').addEventListener('submit', function(event) {
                 event.preventDefault();
 
-                emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+                emailjs.sendForm('service_fz6fy1i', 'template_zphhw0y', this)
                     .then(function(response) {
                         alert('Message sent successfully! Thank you for reaching out.');
                     }, function(error) {
