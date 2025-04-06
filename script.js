@@ -2,15 +2,15 @@
 const themeToggle = document.getElementById("theme-toggle");
 const body = document.body;
 
-// Set initial theme from localStorage
+// Load stored theme preference
 const storedTheme = localStorage.getItem("theme");
 if (storedTheme) {
     body.className = storedTheme;
 } else {
-    body.classList.add("light"); // Default to light theme
+    body.classList.add("light"); // Default to light mode
 }
 
-// Toggle between light and dark themes
+// Toggle theme
 themeToggle.addEventListener("click", () => {
     if (body.classList.contains("light")) {
         body.classList.replace("light", "dark");
@@ -19,19 +19,4 @@ themeToggle.addEventListener("click", () => {
         body.classList.replace("dark", "light");
         localStorage.setItem("theme", "light");
     }
-});
-
-// Sidebar Toggle
-const sidebar = document.getElementById("sidebar");
-const openBtn = document.getElementById("open-btn");
-const closeBtn = document.getElementById("close-btn");
-
-// Open sidebar
-openBtn.addEventListener("click", () => {
-    sidebar.classList.add("open");
-});
-
-// Close sidebar
-closeBtn.addEventListener("click", () => {
-    sidebar.classList.remove("open");
 });
