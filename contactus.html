@@ -9,7 +9,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
         (function() {
-            // Initialize EmailJS with your public key
             emailjs.init("YOUR_PUBLIC_KEY");
         })();
 
@@ -17,12 +16,11 @@
             document.getElementById('contactForm').addEventListener('submit', function(event) {
                 event.preventDefault();
 
-                // Send form data to EmailJS
                 emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
                     .then(function(response) {
-                        alert('Message sent successfully! Thank you for contacting us.');
+                        alert('Message sent successfully! Thank you for reaching out.');
                     }, function(error) {
-                        alert('Failed to send your message. Please try again later.');
+                        alert('Message could not be sent. Please try again later.');
                     });
             });
         };
@@ -33,7 +31,7 @@
         <nav class="navbar">
             <div class="logo">Max Dev Coder</div>
             <div class="nav-links">
-                <a href="index.html">Home</a>
+                <a href="home.html">Home</a>
                 <a href="aboutus.html">About Us</a>
                 <a href="contactus.html">Contact Us</a>
                 <a href="info.html">Info</a>
@@ -45,7 +43,7 @@
     <main>
         <section class="contact-content">
             <h1>Contact Us</h1>
-            <p>We'd love to hear from you! Use the form below to reach out, or contact us directly via email or phone.</p>
+            <p>We value your thoughts and feedback. Use the form below to send us a message!</p>
             <form id="contactForm">
                 <label for="name">Your Name:</label>
                 <input type="text" name="name" id="name" placeholder="Your Name" required>
@@ -59,22 +57,16 @@
                 <label for="message">Your Message:</label>
                 <textarea name="message" id="message" rows="5" placeholder="Write your message here..." required></textarea>
 
-                <button type="submit">Send Message</button>
+                <button type="submit" class="btn-submit">Send Message</button>
             </form>
-            <h2>Direct Contact</h2>
-            <ul>
-                <li><strong>Email:</strong> info@maxdevcoder.com</li>
-                <li><strong>Phone:</strong> +1 234 567 8901</li>
-                <li><strong>Address:</strong> 123 Coding Street, Tech City, USA</li>
-            </ul>
         </section>
     </main>
     <footer class="footer">
         <p>&copy; 2025 Max Dev Coder. All rights reserved.</p>
         <p>Follow us:
-            <a href="https://www.facebook.com/profile.php?id=61555013915093">Facebook</a> |
-            <a href="https://www.youtube.com/@max-yt2025">Youtube</a> |
-            <a href="https://github.com/SSDEDU-WEB">GitHub</a>
+            <a href="https://facebook.com">Facebook</a> |
+            <a href="https://twitter.com">Twitter</a> |
+            <a href="https://github.com">GitHub</a>
         </p>
     </footer>
     <script src="script.js"></script>
