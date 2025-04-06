@@ -1,16 +1,37 @@
-function launchProxy() {
-  const input = document.getElementById("urlInput").value.trim();
+let activeTab = 0;
+let tabs = [];
 
-  if (!input) {
-    alert("Please enter a URL!");
-    return;
-  }
+function checkUrl() {
+    const urlInput = document.getElementById("url-bar").value;
+    if (urlInput.includes("https://") || urlInput.includes("http://")) {
+        document.getElementById("go-btn").disabled = false;
+    } else {
+        document.getElementById("go-btn").disabled = true;
+    }
+}
 
-  let formattedURL = input.startsWith("http") ? input : `https://${input}`;
+function goToSite() {
+    const url = document.getElementById("url-bar").value;
+    const iframe = document.getElementById("viewer");
+    iframe.src = url.startsWith("http") ? url : `https://${url}`;
+}
 
-  // Ultraviolet public instance (can be changed later)
-  const proxyURL = `https://uv.deno.dev/service/${btoa(formattedURL)}`;
+function openNewTab() {
+    const newTabId = tabs.length + 1;
+    const newTabButton = document.createElement("button");
+    newTabButton.classList.add("tab");
+    newTabButton.innerText = `Tab ${newTabId}`;
+    newTabButton.onclick = () => switchTab(newTabId);
+    document.querySelector(".tabs").appendChild(newTabButton);
+    
+    tabs.push(newTabId);
+    switchTab(newTabId);
+}
 
-  // Open in new tab (or you can use iframe too)
-  window.open(proxyURL, "_blank");
+function switchTab(tabId) {
+    activeTab = tabId;
+    document.getElementById("viewer").src = `https://example.com`;
+    document.querySelectorAll(".tab").forEach((tab, index) => {
+        tab.style.backgroundColor = index === tabId - 1 ? "#555" : "#333";
+    });
 }
